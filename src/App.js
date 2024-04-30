@@ -1,24 +1,22 @@
-import "./styles.css";
-import Ataturk from "./components/Ataturk";
-import Picsum from "./components/Picsum";
-import { useState } from "react";
-import Link from "next/link";
-import { useRouter } from "next/router";
+import './styles.css'
+import Ataturk from './components/Ataturk'
+import Picsum from './components/Picsum'
+import { useState } from 'react'
 
 export default function App() {
-  const [option, setOption] = useState("ataturk");
+  const [option, setOption] = useState('ataturk')
 
   const handleChange = (e) => {
-    setOption(e.target.value);
-  };
+    setOption(e.target.value)
+  }
 
   return (
     <>
       <form className="chooseOne">
         <label htmlFor="ata">
-          Atatürk{" "}
+          Atatürk{' '}
           <input
-            checked={option === "ataturk"}
+            checked={option === 'ataturk'}
             required
             value="ataturk"
             name="picOption"
@@ -28,9 +26,9 @@ export default function App() {
           />
         </label>
         <label htmlFor="random">
-          Random{" "}
+          Random{' '}
           <input
-            checked={option === "random"}
+            checked={option === 'random'}
             onChange={handleChange}
             value="random"
             name="picOption"
@@ -40,12 +38,12 @@ export default function App() {
         </label>
       </form>
       <div className="main">
-        {option === "ataturk" ? (
-          <Ataturk style={{ backgroundColor: "#8ba6a9" }} />
+        {option === 'ataturk' ? (
+          <Ataturk style={{ backgroundColor: '#8ba6a9' }} />
         ) : (
           <Picsum />
         )}
       </div>
     </>
-  );
+  )
 }
